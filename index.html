@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book shop</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 </head>
 
 <body onload="init()">
@@ -25,6 +28,7 @@
         <button data-trans="update" class="update-price">Update</button>
     </div>
 
+<section>
 
     <section class="book-sorting">
         <select onchange="onSortingBook(this.value)">
@@ -40,8 +44,56 @@
         </select>
     </section>
 
-    <section class="books-container">
-        <table>
+</section>
+
+    <!-- <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">book name</th>
+            <th scope="col">price</th>
+            <th scope="col">actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table> -->
+
+    <section class="books-container"> 
+        <!-- <table class="table table-striped"> 
+            <thead>
+                <tr>
+                    <th scope="col" data-trans="id">Id</th>
+                    <th scope="col" data-trans="name">Book name</th>
+                    <th scope="col" data-trans="price">price</th>
+                    <th scope="col" data-trans="actions" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>  -->
+
+
+        <table class="table table-striped container">
             <thead>
                 <th data-trans="id">Id</th>
                 <th data-trans="name">Book name</th>
@@ -56,22 +108,27 @@
 
     <button data-trans="next-page" class="next-page" onclick="onNextPage()">Next Page</button>
 
-    <div class="modal" hidden>
-        <h4></h4>
+    <div class="modal">
+        <h4>XXX</h4>
         <div></div>
         <p></p>
-        <h6 data-trans="price">Price  </h6>
+        <h6><span data-trans="price">Price </span> <span class="add-price"></span> </h6>
         <div class="rating">
             <span data-trans="rate"> Book rate: </span>
             <button onclick="onUpRate()"> + </button> <span class="rate"> </span> <button onclick="onDownRate()"> -
             </button>
         </div>
+        <br>
         <button data-trans="close" class="close" onclick="onCloseModal()">Close</button>
     </div>
 
-
-
     <script src="js/utils.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
     <script src="js/i18n-service.js"></script>
     <script src="js/storage.service.js"></script>
     <script src="js/book-service.js"></script>

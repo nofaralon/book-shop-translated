@@ -3,12 +3,14 @@
 
 *{
     font-family: 'Open Sans', sans-serif;
+    /* text-align: -webkit-auto; */
+    text-align:center;
 }
 
 
 
 body{
-    background-color:#fbefcc;
+    /* background-color: #e8ffe6 !important; */
     text-align: center;
     /* font-family: 'Permanent Marker', cursive; */
     display: flex;
@@ -16,33 +18,34 @@ body{
 }
 
 h1{
-   color: #e83900;
+   color:rgb(0, 156, 0)  ;
    font-size: 30px;
 }
 
-td,th{
-    border: 2px solid black;
-    width: 85px;
-    height: 30px;
-}
+/* td,th{ */
+    /* border: 2px solid black; */
+    /* width: 50px;
+    height: 30px; */
+/* } */
 
 th{
-    background-color: #e0876a;
+    /* background-color: #e0876a; */
 }
 
 
 table{
-    background-color: #f9ccac;
+    /* background-color: #f9ccac; */
     margin: auto;
+    text-align: center;
 }
 
 .modal {
-    background-color: #f9ccac;
+    background-color: #e2ffce;
     padding: 10px;
-    position: absolute;
-    top: 10px;
-    height: 90%;
-    width: 25%;
+    position: absolute !important;
+    top: 10px !important;
+    height: 50% !important;
+    width: 25% !important;
     text-align: center;
     border-radius: 5px;
 }
@@ -72,7 +75,7 @@ table{
 }
 .actions{
     /* font-family: 'Permanent Marker', cursive; */
-    background-color: #ff7845;
+    background-color: #b5fb87;
     height: 100%;
     width: 100%;
     border: none; 
@@ -80,16 +83,16 @@ table{
 }
 
 .actions:hover, .add-book:hover{
-    background-color: #f34100;
+    background-color: #c8f3d5;
     cursor: pointer;
 }
 
 .add-book{
     /* font-family: 'Permanent Marker', cursive; */
-    background-color: #ff7845;
+    background-color: rgb(15, 216, 15);
     height: 30px;
-    width: 90px;
-    margin-bottom: 10px;
+    width: 120px;
+    margin-bottom: 10px !important;
     border-radius: 5px;
     border: none; 
     margin: auto;
@@ -99,23 +102,25 @@ table{
     margin-top: 10px;
     background-color: #ff7845;
     border-radius: 5px;
-    border: none;
     height: 30px;
     width: 90px;
 }
 
 .next-page{
+    background-color: rgb(15, 216, 15);
     margin-top: 10px;
-    margin-inline-start: 27%;
+    margin-inline-start: 15%;
     height: 30px;
     width: 100px;
+    border-radius: 5px;
+    border: none; 
     /* font-family: 'Permanent Marker', cursive; */
 }
 
 .adding{
     display: none;
     position: absolute;
-    top: 19%;
+    top: 10%;
     left: 60%;
 }
 
@@ -131,11 +136,14 @@ table{
 .updating{
     display: none;
     position: absolute;
-    top: 19%;
+    top: 10%;
     left: 60%;
 }
 
-
+.updating input, .adding input{
+    height: 30px;
+    width: 100px;
+}
 .rtl {
     direction: rtl;
     
@@ -143,4 +151,14 @@ table{
 
 .rtl-font {
     font-family: 'Varela Round', sans-serif;
+}
+
+.hide{
+    display: block;
+}
+
+.lang, .book-sorting{
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-inline-start: 5px;
 }

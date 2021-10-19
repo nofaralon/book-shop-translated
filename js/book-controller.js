@@ -11,9 +11,9 @@ function renderBooks() {
                 <td>${book.id}</td>
                 <td>${book.name}</td>
                 <td>${book.price}</td>
-                <td onclick="onReadBook(${book.id})"><button data-trans="read" class="actions">${getTrans('read')}</button></td>
-                <td onclick="onUpdateBook(${book.id})"><button data-trans="update" class="actions">${getTrans('update')}</button></td>
-                <td onclick="onRemoveBook(${book.id})"><button  data-trans="delete" class="actions">${getTrans('delete')}</button></td>
+                <td><button onclick="onReadBook(${book.id})" data-trans="read" class="actions">${getTrans('read')}</button></td>
+                <td><button onclick="onUpdateBook(${book.id})" data-trans="update" class="actions">${getTrans('update')}</button></td>
+                <td><button onclick="onRemoveBook(${book.id})" data-trans="delete" class="actions">${getTrans('delete')}</button></td>
             </tr>`
     })
 
@@ -67,12 +67,12 @@ function onUpdatePrice(bookId) {
 function onReadBook(bookId) {
     var book = getBookById(bookId)
     var elModal = document.querySelector('.modal')
+    elModal.style.display='initial'
     elModal.querySelector('h4').innerText = book.name
     elModal.querySelector('div').innerHTML = `<img src=${book.imgUrl}></img>`
-    elModal.querySelector('h6').innerText += '- ' + book.price
+    elModal.querySelector('.add-price').innerText = ' - '  + book.price
     elModal.querySelector('p').innerText = book.details
     elModal.querySelector('.rate').innerText = book.rate
-    elModal.hidden = false;
     gBookId = bookId
 }
 
@@ -88,7 +88,7 @@ function onCloseModal() {
     var elModal = document.querySelector('.modal')
     var rating = elModal.querySelector('.rate').innerText
     setRating(gBookId, rating)
-    elModal.hidden = true
+    elModal.style.display='none'
 }
 
 function onUpRate() {
