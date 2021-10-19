@@ -3,4 +3,5 @@
 function init(){
     console.log('hi');
     renderBooks()
+    // doTrans();
 }

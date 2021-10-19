@@ -11,9 +11,9 @@ function renderBooks() {
                 <td>${book.id}</td>
                 <td>${book.name}</td>
                 <td>${book.price}</td>
-                <td onclick="onReadBook(${book.id})"><button class="actions">Read</button></td>
-                <td onclick="onUpdateBook(${book.id})"><button class="actions">Update</button></td>
-                <td onclick="onRemoveBook(${book.id})"><button class="actions">Delete</button></td>
+                <td onclick="onReadBook(${book.id})"><button data-trans="read" class="actions">${getTrans('read')}</button></td>
+                <td onclick="onUpdateBook(${book.id})"><button data-trans="update" class="actions">${getTrans('update')}</button></td>
+                <td onclick="onRemoveBook(${book.id})"><button  data-trans="delete" class="actions">${getTrans('delete')}</button></td>
             </tr>`
     })
 
@@ -69,7 +69,7 @@ function onReadBook(bookId) {
     var elModal = document.querySelector('.modal')
     elModal.querySelector('h4').innerText = book.name
     elModal.querySelector('div').innerHTML = `<img src=${book.imgUrl}></img>`
-    elModal.querySelector('h6').innerText = 'price: ' + book.price
+    elModal.querySelector('h6').innerText += '- ' + book.price
     elModal.querySelector('p').innerText = book.details
     elModal.querySelector('.rate').innerText = book.rate
     elModal.hidden = false;
@@ -113,5 +113,18 @@ function onSortingBook(sortingBy) {
 
 function onNextPage() {
     netxtPage()
+    renderBooks()
+}
+
+function onSetLang(lang) {
+    setLang(lang);
+    // TODO: if lang is hebrew add RTL class to document.body
+    var elBody = document.querySelector('body')
+    if(lang === 'he'){
+       elBody.classList.add('rtl')
+    } else {
+        elBody.classList.remove('rtl')
+    }
+    doTrans();
     renderBooks()
 }

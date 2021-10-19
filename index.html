@@ -10,36 +10,43 @@
 </head>
 
 <body onload="init()">
-    <h1>Welcome to my Bookshop!</h1>
+    <h1 data-trans="title">Welcome to my Bookshop!</h1>
 
-    <button class="add-book" onclick="onAddBook()">ADD a Book</button>
+    <button data-trans="add-book" class="add-book" onclick="onAddBook()">ADD a Book</button>
 
     <div class="adding">
-        <input class="name" type="name" placeholder="Enter book name" />
-        <input class="price" type="number" placeholder="price" />
-        <button class="adding-book">Add</button>
+        <input data-trans="name" class="name" type="name" placeholder="Book name" />
+        <input data-trans="price" class="price" type="number" placeholder="Price" />
+        <button data-trans="add-book" class="adding-book">Add</button>
     </div>
 
     <div class="updating">
-        <input class="price" type="number" placeholder="price" />
-        <button class="update-price">Update</button>
+        <input data-trans="price" class="price" type="number" placeholder="price" />
+        <button data-trans="update" class="update-price">Update</button>
     </div>
 
 
     <section class="book-sorting">
         <select onchange="onSortingBook(this.value)">
-            <option value="NAME">Name</option>
-            <option value="PRICE">Price</option>
+            <option data-trans="name" value="NAME">Name</option>
+            <option data-trans="price" value="PRICE">Price</option>
+        </select>
+    </section>
+
+    <section class="lang">
+        <select onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
         </select>
     </section>
 
     <section class="books-container">
         <table>
             <thead>
-                <th>id</th>
-                <th>name</th>
-                <th>price</th>
-                <th colspan="3">Actions</th>
+                <th data-trans="id">Id</th>
+                <th data-trans="name">Book name</th>
+                <th data-trans="price">price</th>
+                <th data-trans="actions" colspan="3">Actions</th>
             </thead>
             <tbody class="books-list">
 
@@ -47,23 +54,25 @@
         </table>
     </section>
 
-    <button class="next-page" onclick="onNextPage()">Next Page</button>
+    <button data-trans="next-page" class="next-page" onclick="onNextPage()">Next Page</button>
 
     <div class="modal" hidden>
         <h4></h4>
         <div></div>
         <p></p>
-        <h6>Price: </h6>
+        <h6 data-trans="price">Price  </h6>
         <div class="rating">
-        <span> Book rate: </span>
-        <button onclick="onUpRate()"> + </button> <span class="rate"> </span> <button onclick="onDownRate()"> - </button>
+            <span data-trans="rate"> Book rate: </span>
+            <button onclick="onUpRate()"> + </button> <span class="rate"> </span> <button onclick="onDownRate()"> -
+            </button>
         </div>
-        <button class="close" onclick="onCloseModal()">Close</button>
+        <button data-trans="close" class="close" onclick="onCloseModal()">Close</button>
     </div>
 
 
 
     <script src="js/utils.js"></script>
+    <script src="js/i18n-service.js"></script>
     <script src="js/storage.service.js"></script>
     <script src="js/book-service.js"></script>
     <script src="js/book-controller.js"></script>

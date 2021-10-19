@@ -13,7 +13,7 @@ h1{
 
 td,th{
     border: 2px solid black;
-    width: 70px;
+    width: 85px;
     height: 30px;
 }
 
@@ -97,7 +97,7 @@ table{
 
 .next-page{
     margin-top: 10px;
-    margin-left: 68%;
+    margin-inline-start: 27%;
     height: 30px;
     width: 100px;
     font-family: 'Permanent Marker', cursive;
@@ -124,4 +124,9 @@ table{
     position: absolute;
     top: 19%;
     left: 60%;
+}
+
+
+.rtl {
+    direction: rtl;
 }
