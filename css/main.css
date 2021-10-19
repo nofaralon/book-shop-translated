@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
 body{
     background-color:#fbefcc;
     text-align: center;
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
     display: flex;
     flex-direction: column;
 }
@@ -62,7 +71,7 @@ table{
     justify-content: center;
 }
 .actions{
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
     background-color: #ff7845;
     height: 100%;
     width: 100%;
@@ -76,7 +85,7 @@ table{
 }
 
 .add-book{
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
     background-color: #ff7845;
     height: 30px;
     width: 90px;
@@ -100,7 +109,7 @@ table{
     margin-inline-start: 27%;
     height: 30px;
     width: 100px;
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
 }
 
 .adding{
@@ -129,4 +138,9 @@ table{
 
 .rtl {
     direction: rtl;
+    
+}
+
+.rtl-font {
+    font-family: 'Varela Round', sans-serif;
 }

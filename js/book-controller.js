@@ -120,11 +120,13 @@ function onSetLang(lang) {
     setLang(lang);
     // TODO: if lang is hebrew add RTL class to document.body
     var elBody = document.querySelector('body')
-    if(lang === 'he'){
+    if(lang === 'he') {
        elBody.classList.add('rtl')
+       var elTds = document.querySelectorAll('td')
+       elTds.forEach((td) => td.classList.add('rtl-font'))
     } else {
         elBody.classList.remove('rtl')
     }
     doTrans();
-    renderBooks()
+    // renderBooks()
 }
